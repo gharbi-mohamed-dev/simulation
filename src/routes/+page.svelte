@@ -42,6 +42,7 @@
     method="get"
     class="w-full flex flex-col items-center justify-center p-4 gap-6"
 >
+    <img class="h-16" src="/logo.png" alt="logo labaik tourisme et voyages" />
     <div class="flex w-full max-w-sm flex-col gap-1.5">
         <Label for="salary">Salaire</Label>
         <Input
@@ -49,7 +50,7 @@
             name="salary"
             type="number"
             id="salary"
-            placeholder="salary"
+            placeholder="salaire"
             bind:value={$data.salary}
         />
         <p class="text-muted-foreground text-sm">Salaire</p>
