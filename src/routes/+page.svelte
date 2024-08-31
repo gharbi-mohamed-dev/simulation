@@ -44,19 +44,20 @@
 >
     <img class="h-16" src="/logo.png" alt="logo labaik tourisme et voyages" />
     <div class="flex w-full max-w-sm flex-col gap-1.5">
-        <Label for="salary">Salaire</Label>
+        <Label class="capitalize" for="salary">Salaire mensuel net</Label>
         <Input
             required
             name="salary"
             type="number"
             id="salary"
-            placeholder="salaire"
             bind:value={$data.salary}
         />
-        <p class="text-muted-foreground text-sm">Salaire</p>
+        <p class="text-muted-foreground text-sm">Plus de 30000.00 da</p>
     </div>
     <div class="flex w-full max-w-sm flex-col gap-1.5">
-        <Label for="previous">Credit en cours</Label>
+        <Label class="capitalize" for="previous"
+            >capacité d'endettement consommée</Label
+        >
         <Input
             required
             name="previous"
@@ -65,25 +66,29 @@
             placeholder="0.0"
             bind:value={$data.previous}
         />
-        <p class="text-muted-foreground text-sm">Credit en cours</p>
+        <p class="text-muted-foreground text-sm">
+            Mensualité des crédits en cours
+        </p>
     </div>
     <div class="flex w-full max-w-sm flex-col gap-1.5">
-        <Label for="n">Durée du financement</Label>
+        <Label class="capitalize" for="n">Durée du financement</Label>
         <Input
             required
             name="months"
             type="number"
             id="n"
             placeholder="0.0"
-            min="6"
+            min="12"
             max="24"
             step="1"
             bind:value={$data.months}
         />
-        <p class="text-muted-foreground text-sm">(choisir de 6 à 24 mois)</p>
+        <p class="text-muted-foreground text-sm">Choisir entre 12 et 24 mois</p>
     </div>
     <div class="flex w-full max-w-sm flex-col gap-1.5">
-        <Label for="total">Cout de omra</Label>
+        <Label class="capitalize" for="total"
+            >Le montant Totale : (OMRA / SEJOURS)</Label
+        >
         <Input
             required
             name="total"
@@ -92,7 +97,7 @@
             placeholder="0.0"
             bind:value={$data.total}
         />
-        <p class="text-muted-foreground text-sm">Cout de omra</p>
+        <p class="text-muted-foreground text-sm"></p>
     </div>
     {#if formIsValid}
         <Button type="submit">Resultat de la simulation</Button>
