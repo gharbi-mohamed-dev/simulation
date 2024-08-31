@@ -6,6 +6,7 @@
     import { SimulationSchema } from "$lib/validation";
     import { Schema } from "@effect/schema";
     import { Either } from "effect";
+    import { onMount } from "svelte";
     import { writable } from "svelte/store";
 
     const getEntry = (name: string) => {
@@ -22,11 +23,14 @@
         months?: number;
         previous?: number;
         total?: number;
-    }>({
-        salary: getEntry("salary"),
-        months: getEntry("months") || 24,
-        previous: getEntry("previous") || 0,
-        total: getEntry("total"),
+    }>({});
+    onMount(() => {
+        $data = {
+            salary: getEntry("salary"),
+            months: getEntry("months") || 24,
+            previous: getEntry("previous") || 0,
+            total: getEntry("total"),
+        };
     });
     $: either = Schema.decodeUnknownEither(SimulationSchema)($data);
     $: formIsValid = Either.isRight(either);

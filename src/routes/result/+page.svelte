@@ -3,7 +3,7 @@
     import { simulate, type SimulationValue } from "$lib/simulation";
     import { SimulationSchema } from "$lib/validation";
     import { Schema } from "@effect/schema";
-    import { Effect, Either } from "effect";
+    import { Either } from "effect";
     import * as Table from "$lib/components/ui/table";
     import Button from "$lib/components/ui/button/button.svelte";
     import { onMount } from "svelte";
