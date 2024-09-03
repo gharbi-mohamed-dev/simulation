@@ -33,6 +33,9 @@
             months: getEntry("months") || 24,
             previous: getEntry("previous") || 0,
             total: getEntry("total"),
+            firstName: $page.url.searchParams.get("firstName") || undefined,
+            lastName: $page.url.searchParams.get("lastName") || undefined,
+            phone: $page.url.searchParams.get("phone") || undefined,
         };
     });
     $: either = Schema.decodeUnknownEither(SimulationSchema)($data);
