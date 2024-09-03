@@ -18,6 +18,9 @@
             total: getEntry("total"),
             salary: getEntry("salary"),
             previous: getEntry("previous"),
+            firstName: getEntry("firstName"),
+            lastName: getEntry("lastName"),
+            phone: getEntry("phone"),
         };
 
         const either = Schema.decodeUnknownEither(SimulationSchema)(entries);

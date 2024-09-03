@@ -23,6 +23,9 @@
         months?: number;
         previous?: number;
         total?: number;
+        firstName?: string;
+        lastName?: string;
+        phone?: string;
     }>({});
     onMount(() => {
         $data = {
@@ -43,6 +46,39 @@
     class="w-full flex flex-col items-center justify-center p-4 gap-6"
 >
     <img class="h-16" src="/logo.png" alt="logo labaik tourisme et voyages" />
+    <div class="flex w-full max-w-sm flex-col gap-1.5">
+        <Label class="capitalize" for="lastName">Nom</Label>
+        <Input
+            required
+            name="lastName"
+            type="text"
+            id="lastName"
+            bind:value={$data.lastName}
+        />
+        <p class="text-muted-foreground text-sm">Nom de famille</p>
+    </div>
+    <div class="flex w-full max-w-sm flex-col gap-1.5">
+        <Label class="capitalize" for="firstName">Prénom</Label>
+        <Input
+            required
+            name="firstName"
+            type="text"
+            id="firstName"
+            bind:value={$data.firstName}
+        />
+        <p class="text-muted-foreground text-sm">Votre Prénom</p>
+    </div>
+    <div class="flex w-full max-w-sm flex-col gap-1.5">
+        <Label class="capitalize" for="phone">Tel</Label>
+        <Input
+            required
+            name="phone"
+            type="tel"
+            id="phone"
+            bind:value={$data.phone}
+        />
+        <p class="text-muted-foreground text-sm">Votre Numero de telephone</p>
+    </div>
     <div class="flex w-full max-w-sm flex-col gap-1.5">
         <Label class="capitalize" for="salary">Salaire mensuel net</Label>
         <Input

@@ -10,7 +10,10 @@ export const SimulationSchema = Schema.Struct({
     months: MaybeNumberFromString.pipe(Schema.int() ,
     Schema.between(6, 24)),
     previous: MaybeNumberFromString.pipe(Schema.nonNegative()),
-    total: MaybeNumberFromString.pipe(Schema.positive(), Schema.lessThanOrEqualTo(1200000))
+    total: MaybeNumberFromString.pipe(Schema.positive(), Schema.lessThanOrEqualTo(1200000)),
+    firstName: Schema.Trim.pipe(Schema.compose(Schema.Lowercase), Schema.compose(Schema.NonEmptyString)),
+    lastName: Schema.Trim.pipe(Schema.compose(Schema.Lowercase), Schema.compose(Schema.NonEmptyString)),
+    phone: Schema.Trim.pipe(Schema.compose(Schema.Lowercase), Schema.compose(Schema.NonEmptyString)),
 }).pipe(
     Schema.filter(({salary, previous}) => {
         if(salary <= previous) {
