@@ -9,7 +9,7 @@ export default defineConfig({
 		password: process.env.POSTGRES_PASSWORD!,
 		port: +process.env.POSTGRES_PORT!,
 		user: process.env.POSTGRES_USER!,
-		host: process.env.POSTGRES_HOST!,
+		host: "localhost",
 	},
 	verbose: true,
 	strict: true,
