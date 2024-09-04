@@ -14,8 +14,6 @@
 
         if (entry) {
             return Number(entry);
-        } else {
-            return undefined;
         }
     };
     const data = writable<{
@@ -23,8 +21,7 @@
         months?: number;
         previous?: number;
         total?: number;
-        firstName?: string;
-        lastName?: string;
+        name?: string;
         phone?: string;
     }>({});
     onMount(() => {
@@ -33,8 +30,7 @@
             months: getEntry("months") || 24,
             previous: getEntry("previous") || 0,
             total: getEntry("total"),
-            firstName: $page.url.searchParams.get("firstName") || undefined,
-            lastName: $page.url.searchParams.get("lastName") || undefined,
+            name: $page.url.searchParams.get("name") || undefined,
             phone: $page.url.searchParams.get("phone") || undefined,
         };
     });
@@ -50,26 +46,15 @@
 >
     <img class="h-16" src="/logo.png" alt="logo labaik tourisme et voyages" />
     <div class="flex w-full max-w-sm flex-col gap-1.5">
-        <Label class="capitalize" for="lastName">Nom</Label>
+        <Label class="capitalize" for="name">Nom</Label>
         <Input
             required
-            name="lastName"
+            name="name"
             type="text"
-            id="lastName"
-            bind:value={$data.lastName}
+            id="name"
+            bind:value={$data.name}
         />
-        <p class="text-muted-foreground text-sm">Nom de famille</p>
-    </div>
-    <div class="flex w-full max-w-sm flex-col gap-1.5">
-        <Label class="capitalize" for="firstName">Prénom</Label>
-        <Input
-            required
-            name="firstName"
-            type="text"
-            id="firstName"
-            bind:value={$data.firstName}
-        />
-        <p class="text-muted-foreground text-sm">Votre Prénom</p>
+        <p class="text-muted-foreground text-sm">Votre Nom complet nom de famille + prenom</p>
     </div>
     <div class="flex w-full max-w-sm flex-col gap-1.5">
         <Label class="capitalize" for="phone">Tel</Label>

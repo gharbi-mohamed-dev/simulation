@@ -4,7 +4,7 @@
     import Button from "$lib/components/ui/button/button.svelte";
     import type { PageServerData } from "./$types";
     export let data: PageServerData;
-    let link = $page.url.search.toString();
+    const link = $page.url.search.toString();
 </script>
 
 <!-- 
