@@ -8,6 +8,7 @@
 **/.dockerignore
 # **/.env
 **/.git
+**/db-data
 **/.gitignore
 **/.project
 **/.settings
