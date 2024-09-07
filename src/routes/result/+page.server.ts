@@ -5,6 +5,7 @@ import { Either } from "effect";
 import { simulate } from "$lib/simulation";
 import { db } from "$lib/db";
 import { Simulation } from "$lib/db/schema";
+import { parsePhoneNumber } from "libphonenumber-js";
 
 export const load: PageServerLoad = async (event) => {
 	const getEntry = (name: string) => event.url.searchParams.get(name);
@@ -32,7 +33,7 @@ export const load: PageServerLoad = async (event) => {
 			salary: data.salary,
 			months: data.months,
 			previous: data.previous,
-			phone: data.phone,
+			phone: parsePhoneNumber(data.phone, "DZ")?.number,
 			total: data.total,
 		})
 		.onConflictDoNothing();

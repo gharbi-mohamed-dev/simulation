@@ -30,6 +30,7 @@
 **/secrets.dev.yaml
 **/values.dev.yaml
 **/build
+**/compose.yaml
 **/dist
 LICENSE
 README.md

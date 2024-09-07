@@ -34,7 +34,9 @@
 		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
 		"effect": "^3.7.0",
+		"libphonenumber-js": "^1.11.7",
 		"lucide-svelte": "^0.439.0",
+		"oslo": "^1.2.1",
 		"postgres": "^3.4.4",
 		"tailwind-merge": "^2.5.2",
 		"tailwind-variants": "^0.2.1"

@@ -14,6 +14,7 @@ const queryClient = postgres({
 	password: POSTGRES_PASSWORD,
 	user: POSTGRES_USER,
 	host: POSTGRES_HOST,
+	debug: true,
 });
 export const db = drizzle(queryClient, {
 	schema,
